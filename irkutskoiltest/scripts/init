@@ -1,0 +1,2 @@
+COPY calculation_waterCutCatalog (water_cut_value, first_characteristic, second_characteristic) FROM '/docker-entrypoint-initdb.d/WaterCutTable.csv' DELIMITER ',' CSV HEADER;
+COPY calculation_FallRate (month, first_m, second_m) FROM '/docker-entrypoint-initdb.d/FallRateTable.csv' DELIMITER ',' CSV HEADER;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ошибка загрузки</title>
+
+</head>
+<h3 style="text-align: left; color: #3f7320;">В исходном файле несколько строк с одинаковым названием скважин. Пожалуйста, отредактируйте файл или выберете новый</h3>
+<body>
+
+        <form action="{% url 'excel-upload' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file">
+            <br>
+            <br>
+        <input type="submit" value="Загрузить данные в БД">
+    </form>
+
+
+</body>
+</html>

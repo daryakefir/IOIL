@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Расчет темпов падения добычи: выбор периода</title>
+
+</head>
+<h3 style="text-align: left; color: #3f7320;">Данные из Excel успешно загружены в базу данных!</h3>
+<body>
+
+    <form action="{% url 'export-to-excel' %}" method="post">
+        {% csrf_token %}
+        <label for="count_month">Выберите количество месяцев, за которые необходимо рассчитать темпы падения добычи (от 1 до 200):</label>
+        <input type="number" id="count_month" name="count_month" min="1" max="200" required>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+</body>
+</html>

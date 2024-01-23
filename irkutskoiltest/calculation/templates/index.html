@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Расчет темпов падения добычи: загрузка в БД</title>
+
+</head>
+<h3 style="text-align: left; color: #3f7320;">Выберете файл Excel с данными о скважинах для расчета темпов добычи нефти</h3>
+<body>
+
+        <form action="{% url 'excel-upload' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file">
+            <br>
+            <br>
+        <input type="submit" value="Загрузить данные в БД">
+    </form>
+
+
+</body>
+</html>
